@@ -1,0 +1,50 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.logoEL {
+    display: flex;
+    justify-content: center;
+}
+
+.font-1 {
+    font-family: 'Koulen', cursive;
+    font-size: 80px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.bg-1 {
+    background-color: rgb(198, 228, 255);
+}
+
+.minHeight {
+    min-height: 670px;
+}
+
+/*noticias*/
+.center {
+    text-align: center;
+}
+
+.grid {
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 50px;
+    margin: auto;
+}
+
+main div span div {
+    background-color: aliceblue;
+    max-width: 200px;
+    margin: 3px 0px;
+    padding: 2px;
+}
+
+footer {
+    background-color: aquamarine;
+    text-align: end;
+}
