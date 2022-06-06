@@ -29,15 +29,12 @@ function createAccount () {
     password = document.getElementById ("inputPassword").value;
     //codigo para que no se repitan las cuentas al crearlas por usuario
     let loadAccess = null;
-    console.log (loadAccounts);
     for (const loadIterator of listOfUsers) {
         if (document.getElementById ("inputUser").value == loadIterator.user) {
             loadAccess = true;
-            console.log (loadAccess + "es true")
             break;
         } else {
             loadAccess = null;
-            console.log (loadAccess + "es null")
         }
     }
     //condicional para cersiorarse que el usuario haya completado los dos campos de usuario y contraseña
