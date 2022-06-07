@@ -83,7 +83,7 @@ function loginAccount (e) {
 
     if (username == "admin" && password == "admin") {
         sessionStorage.setItem ('adminAccount', true);
-    }
+        }
 
     for (const validUser of listOfUsers) {
         if (username == validUser.user && password == validUser.pass) {

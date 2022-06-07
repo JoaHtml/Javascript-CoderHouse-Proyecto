@@ -27,20 +27,20 @@ saveNews();
 let writer;
 let access = sessionStorage.getItem ('accountAccessStorage');
 let adminAccessAccount = sessionStorage.getItem ('adminAccount');
-if (alertWelcome != null) {
-    if (adminAccessAccount = true && adminAccessAccount != null) {
-        writer = parseInt (prompt("Hola admin, ¿Cuantas noticias deseas subir hoy? Use solo números enteros"));
 
-        //creación del objeto fecha de la librería Luxon
-        const newsDate = luxon.DateTime.local ();
-
-        for (let i = 0; i < writer; i++) {
-            let newNews = new news (newsDate.toLocaleString(), prompt ("Inserte título de noticia aquí").toUpperCase(), prompt ("Inserte el contenido de la noticia"), randomViews (1,500));
-            packNews.push (newNews);
-            saveNews ();
-        }
+if (adminAccessAccount = true && adminAccessAccount != null) {
+    let btnGoUploadNews = document.getElementById ("btnAccessAdminUploadNews");
+    btnGoUploadNews.innerHTML = '<a href="../pages/subir_noticias.html"><button type="button" class="btn btn-outline-danger">Subir Nuevas Noticias</button></a>'
+    
+    //creación del objeto fecha de la librería Luxon...poner en subirNoticias.js
+    const newsDate = luxon.DateTime.local ();
+    for (let i = 0; i < writer; i++) {
+        let newNews = new news (newsDate.toLocaleString(), prompt ("Inserte título de noticia aquí").toUpperCase(), prompt ("Inserte el contenido de la noticia"), randomViews (1,500));
+        packNews.push (newNews);
+        saveNews ();
     }
 }
+
 
 //agregado de contenido al apartado de noticias
 let content = "";
