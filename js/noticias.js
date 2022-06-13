@@ -2,13 +2,6 @@ function randomViews(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-function news (fecha, titular, contenido, views) {
-    this.fecha = fecha;
-    this.titular = titular;
-    this.contenido = contenido;
-    this.views = views;
-}
-
 //para cargar las noticias guardadas o cargar solo el paquete iniciador de noticias
 let packNews;
 let loadPackNews = JSON.parse(localStorage.getItem ('packOfNews'));
@@ -24,29 +17,18 @@ loadPackNews ? packNews = loadPackNews : packNews = [
 saveNews();
 
 //acceso solo para admin, para agregar noticias
-let writer;
-let access = sessionStorage.getItem ('accountAccessStorage');
 let adminAccessAccount = sessionStorage.getItem ('adminAccount');
 
 if (adminAccessAccount = true && adminAccessAccount != null) {
     let btnGoUploadNews = document.getElementById ("btnAccessAdminUploadNews");
     btnGoUploadNews.innerHTML = '<a href="../pages/subir_noticias.html"><button type="button" class="btn btn-outline-danger">Subir Nuevas Noticias</button></a>'
-    
-    //creación del objeto fecha de la librería Luxon...poner en subirNoticias.js
-    const newsDate = luxon.DateTime.local ();
-    for (let i = 0; i < writer; i++) {
-        let newNews = new news (newsDate.toLocaleString(), prompt ("Inserte título de noticia aquí").toUpperCase(), prompt ("Inserte el contenido de la noticia"), randomViews (1,500));
-        packNews.push (newNews);
-        saveNews ();
-    }
 }
-
 
 //agregado de contenido al apartado de noticias
 let content = "";
 
 for (const packNewsWriting of packNews) {
-    content += '<div class="container"><img src="../images/novedadWeb.jpg" alt="breaking news image" width="200px"><div><h6>' + packNewsWriting.fecha + "</h6></div><br /><div><h2>" + packNewsWriting.titular + "</h2></div><br /><div><h4>" + packNewsWriting.contenido + '</h4></div><div class="dispFlex"><img src="../images/view.png" alt="views icon"><h4> ' + packNewsWriting.views + "</h4></div></div>"
+    content += '<div class="container"><img src="../images/novedadWeb.jpg" alt="breaking news image" width="200px"><div><h6>' + packNewsWriting.fecha + "</h6></div><br /><div><h2>" + packNewsWriting.titular + "</h2></div><br /><div><h4>" + packNewsWriting.contenido + '</h4></div><div class="dispFlex"><img src="../images/view.png" alt="views icon"><h4> ' + packNewsWriting.views + '</h4></div></div>'
     document.getElementById ("equinoccioNews").innerHTML = content;
 }
 

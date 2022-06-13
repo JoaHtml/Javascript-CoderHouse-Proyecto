@@ -76,41 +76,69 @@
   </header>
     
     <main class="mh-100 bg-1">
-      <div class="container-fluid">   
+      <div class="container-fluid" id="onlyAdminView">   
         <h1 class="center font-1" style="margin: auto;">Subir Noticias</h1>
         <div class="row vh-100">
           <div class="col">
-            <form id="formUploadNews">
+            <div class="container py-2">
+              <form>
+                <label for="titleNews" class="form-label">Titular</label>  
+                <input id="titleNews" type="text" placeholder="Ingresa titulo" class="form-control my-2">
+                <label for="contentNews" class="form-label">Contenido</label>
+                <textarea id="contentNews" type="text" placeholder="Ingresa contenido" class="form-control my-2"></textarea>
+                <!-- <input class="form-check-input" type="radio" name="dateRadio" id="dateRadioActual" value="option1" checked>
+                <label class="form-check-label" for="dateRadioActual">Fecha Actual</label>
+                <br />
+                <input class="form-check-input" type="radio" name="dateRadio" id="dateRadioOther" value="option2">
+                <label class="form-check-label" for="dateRadioOther">Otra Fecha</label>
+                <div class="input-group mb-3">
+                  <input type="number" class="form-control" aria-label="day" placeholder="DD" id="dayInput" min="1" max="31">
+                  <span class="input-group-text">/</span>
+                  <input type="number" class="form-control" aria-label="month" placeholder="MM" id="monthInput" min="1" max="12">
+                  <span class="input-group-text">/</span>
+                  <input type="number" class="form-control" aria-label="year" placeholder="AAAA" id="yearInput" min="0" max="9999">
+                </div> -->
+                <br />
+                <button id="previsual" class="btn btn-danger" type="button" onclick="previsualNews()">Previsualizar >>></button>
+                <button id="btnSubmit" class="btn btn-success" type="reset" onclick="capturar();">Subir</button>
+              </form>
+          </div>
+
+            <!-- <form id="formUploadNews">
               <div class="mb-3">
                 <label for="titleNews" class="form-label">Titular</label>
                 <input type="text" class="form-control" id="titleNews" placeholder="Escriba aquí el titulo de su noticia">
               </div>
               <div class="mb-3">
                 <label for="contentNews" class="form-label">Contenido</label>
-                <input type="text" class="form-control" id="contentNews" placeholder="Escriba aquí el contenido de su noticia">
+                <textarea class="form-control" placeholder="Escriba aquí el contenido de su noticia" id="contentNews"></textarea>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                <input class="form-check-input" type="radio" name="gridRadios" id="radioActual" value="option1">
                 <label class="form-check-label" for="gridRadios1">
                   Fecha actual
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                <input class="form-check-input" type="radio" name="gridRadios" id="radioOther" value="option2">
                 <label class="form-check-label" for="gridRadios2">
                   Publicar en otra fecha
                 </label>
+                <div id="inputOtherDate"></div>
               </div>
-              <div>
-                <button type="button" class="btn btn-primary" id="btnPrev"> Previsualizar</button>
+              <div class="d-flex">
+                <div class="m-1">
+                  <button type="button" class="btn btn-primary" id="btnPrev"> Previsualizar</button>
+                </div>
+                <div class="m-1">
+                  <button type="submit" class="btn btn-primary" id="btnUploadNews">Subir</button>
+                </div>
               </div>
-              <div class="col-12">
-                <button type="submit" class="btn btn-primary" id="btnUploadNews">Subir</button>
-              </div>
-            </form>
+            </form> -->
           </div>
           <div class="col vh-100">
             <h2 class="text-center">Previsualización</h2>
+            <div class="grid" id="prevNews"></div>
           </div>
         </div>
       </div>       
@@ -144,6 +172,6 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.4.0/build/global/luxon.min.js"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/noticias.js"></script>
+    <script src="../js/subirNoticias.js"></script>
 </body>
 </html>

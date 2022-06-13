@@ -122,7 +122,7 @@ function askAccounts() {
                         });
             alertWelcomeDesactivate ();
         }
-        document.getElementById ("formAccount").innerHTML = '<h6>Bienvenido ' + userAccessJSON.user + '!</h6><button class="btn btn-outline-success bg-light text-dark" type="button" id="btnCloseSession">Cerrar Sesión</button>';
+        document.getElementById ("formAccount").innerHTML = '<h6 class="nav-link text-dark">Bienvenido ' + userAccessJSON.user + '!</h6><button class="btn btn-outline-success bg-light text-dark" type="button" id="btnCloseSession">Cerrar Sesión</button>';
     }
 }
 
