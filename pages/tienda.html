@@ -74,12 +74,38 @@
         </nav>
     </header>
     
-    <main>
+    <main class="bg-danger">
         <div class="bg-1 container-fluid">   
             <h1 class="center font-1" style="margin: auto;">Tienda</h1>
             <div class="grid" id="catalogoJuegos">
             </div>
-        </div>       
+            <br />
+        </div>
+        <div class="bg-light" id="listShopCart">
+            <h3 class="center font-4" style="margin: auto;">Carrito de Compras</h3>
+            <div class="container-fluid text-center">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Precio unitario (AR$)</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBodyBuy">
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row"></th>
+                            <th>Total (AR$)</td>
+                            <td id="totalPrice"></td>
+                            <td><button class="btn btn-success" id="buyBoardGames">Comprar</button> <button class="btn btn-warning" id="deleteAllBoardGames">Vaciar Carrito</button></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>      
     </main>
 
     <footer class="container-fluid p-1">
