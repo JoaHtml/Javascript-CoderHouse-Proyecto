@@ -6,15 +6,12 @@ const packOfBoardGames = [];
 const catalog = document.querySelector ("#catalogoJuegos");
 fetch ('../json/boardgames.json')   .then((res)=>res.json())
                                     .then((data) => {                                         
-                                        data.forEach ((boardGame)=> {catalog.innerHTML += '<div><div class="bg-white"><div class="text-center bg-primary"><img src="../images/' + boardGame.image + '" width="200" height="150" alt="' + boardGame.name +' Box"></div><div><h6><strong>Título: </strong>' + boardGame.name + '</h6></div><div><h6><strong>Género: </strong>' + boardGame.genre + '</h6></div><div><h6><strong>Jugadores: </strong> de ' + boardGame.minPlayers + ' a ' + boardGame.maxPlayers +'</h6></div><div><h6><strong>Tiempo estimado: </strong> de ' + boardGame.time + '</h6></div><div><h6><strong>Edad: </strong>' + boardGame.age + '</h6></div><div><h6><strong>Precio: </strong> $' + boardGame.price + '</h6></div></div id="addCart' + boardGame.pos + '">' + btnBuyDisplayPart1 + boardGame.id + btnBuyDisplayPart2 + '</div>'; packOfBoardGames.push (boardGame);})
-                                                    })
-
-console.log (packOfBoardGames);
+                                        data.forEach ((boardGame)=> {catalog.innerHTML += '<div class="col-lg-3 col-md-5 col-sm-9 col-9 container-fluid"><div class="bg-white maxWidthNews"><div class="text-center bg-primary"><img src="../images/' + boardGame.image + '" width="200" height="150" alt="' + boardGame.name +' Box" class="img-fluid"></div><div><h6><strong>Título: </strong>' + boardGame.name + '</h6></div><div><h6><strong>Género: </strong>' + boardGame.genre + '</h6></div><div><h6><strong>Jugadores: </strong> de ' + boardGame.minPlayers + ' a ' + boardGame.maxPlayers +'</h6></div><div><h6><strong>Tiempo estimado: </strong> de ' + boardGame.time + '</h6></div><div><h6><strong>Edad: </strong>' + boardGame.age + '</h6></div><div><h6><strong>Precio: </strong> $' + boardGame.price + '</h6></div></div id="addCart' + boardGame.pos + '">' + btnBuyDisplayPart1 + boardGame.id + btnBuyDisplayPart2 + '</div>'; packOfBoardGames.push (boardGame);})
+                                                    });
 
 //funcion para crear o esconder el boton de Agregar articulo al carrito
 function askAccountForBuyBtn() {
     let callBtnBuy = sessionStorage.getItem ('accountAccessStorage');
-    console.log (callBtnBuy);
     if (callBtnBuy) {
         btnBuyDisplayPart1 = '<button class="btn btn-primary" id="btnAddCart';
         btnBuyDisplayPart2 = '">(+) Agregar</button>';
@@ -31,7 +28,6 @@ askAccountForBuyBtn();
 let callWhatUser;
 function askWhatUser () {
     callWhatUser = JSON.parse (sessionStorage.getItem ('userJSONKey'));
-    console.log (callWhatUser.user);
 }
 
 askWhatUser ();
@@ -41,6 +37,8 @@ let shopCart;
 let shopCartLoaded = JSON.parse (localStorage.getItem ('shopCart'+callWhatUser.user+'LS'));
 
 shopCartLoaded ? shopCart = shopCartLoaded : shopCart = [];
+
+localStorage.setItem ('shopCart'+callWhatUser.user+'LS', JSON.stringify(shopCart));
 
 function ShopCartConstructor (image, name, price, id) {
     this.image = image;
@@ -57,18 +55,14 @@ document.addEventListener("click", (e)=>{
     packOfBoardGames.forEach ((packsBG)=>{
         if(e.target.id == 'btnAddCart' +  packsBG.id + ''){
             clickCounter = clickCounter + 1;
-            console.log (clickCounter);
             productShopCart = new ShopCartConstructor (packsBG.image, packsBG.name, packsBG.price, clickCounter);
-            console.log(productShopCart);
             shopCart.push (productShopCart);
-            console.log ('click');
-            console.log (shopCart);
             localStorage.setItem ('shopCart'+callWhatUser.user+'LS', JSON.stringify(shopCart));
         }
     })
 });
 
-//funcion para agregar productos al carrito de compras
+//funcion para agregar productos al carrito de compras y refrescar la lista
 function loadShopCart () {
     let checkShopCart = JSON.parse (localStorage.getItem ('shopCart'+callWhatUser.user+'LS'));
     sectionTableProducts.innerHTML = "";
@@ -76,7 +70,7 @@ function loadShopCart () {
     totalPrice.innerHTML = "";
     if (checkShopCart.length != 0) {
         for (const shopCartIterator of shopCart) {
-            sectionTableProducts.innerHTML += '<td><img src="../images/' + shopCartIterator.image + '" width="50" height="40" alt="' + shopCartIterator.name +' BoxPreview"></td><td>' + shopCartIterator.name + '</td><td>$' + shopCartIterator.price + '</td><td><button class="btn btn-danger" id="deleteBG' + shopCartIterator.id + '">[X]</button></td>';
+            sectionTableProducts.innerHTML += '<td class="rowNoDisplay"><img src="../images/' + shopCartIterator.image + '" width="50" height="40" alt="' + shopCartIterator.name + 'BoxPreview"></td><td>' + shopCartIterator.name + '</td><td>$' + shopCartIterator.price + '</td><td><button class="btn btn-danger" id="deleteBG' + shopCartIterator.id + '">[X]</button></td>';
             total += shopCartIterator.price;
             totalPrice.innerHTML = '$' + total;
         };
@@ -90,7 +84,6 @@ function removeItemSC (e) {
 
     for (const removingShopCartIterator of shopCart) {
         if(e.target.id == 'deleteBG' +  removingShopCartIterator.id + ''){
-            console.log('eliminado' + removingShopCartIterator.id);
             let indexRemoveProduct = shopCart.indexOf (removingShopCartIterator);
             shopCart.splice (indexRemoveProduct, 1);
         }
@@ -106,6 +99,7 @@ document.addEventListener("click", (e)=>{ loadShopCart (); removeItemSC (e)});
 loadShopCart ();
 
 //eliminar todo el carrito
+function deleteAllBG () {
 document.getElementById ('deleteAllBoardGames').addEventListener ('click', ()=>{
     let checkShopCart = JSON.parse (localStorage.getItem ('shopCart'+callWhatUser.user+'LS'));
     if (checkShopCart.length != 0) {
@@ -130,13 +124,16 @@ document.getElementById ('deleteAllBoardGames').addEventListener ('click', ()=>{
     
         })
     }
-});
+})
+};
+
+deleteAllBG ();
 
 //sweet alert al comprar
+function buyAllBG () {
 document.getElementById ('buyBoardGames').addEventListener ('click', ()=>{
     //chequear si existe listado de productos para comprar
     let checkShopCart = JSON.parse (localStorage.getItem ('shopCart'+callWhatUser.user+'LS'));
-    console.log (checkShopCart.length);
     if (checkShopCart.length != 0) {
         //si el usuario es admin solo es para prueba
         let callIfAdmin = sessionStorage.getItem ('adminAccount')
@@ -178,3 +175,6 @@ document.getElementById ('buyBoardGames').addEventListener ('click', ()=>{
     }
     
 })
+};
+
+buyAllBG ();

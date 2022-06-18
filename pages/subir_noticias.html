@@ -17,7 +17,7 @@
     
 </head>
 <body>
-  <header>
+  <header class="sticky-top">
     <!--Modal de bootstrap para el icono del signo de pregunta-->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -36,7 +36,7 @@
       </div>
     </div>
     <!--termina Modal-->
-      <nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
           <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -104,9 +104,9 @@
               </form>
             </div>
           </div>
-          <div class="col vh-100">
+          <div class="col vh-100 container-fluid">
             <h2 class="text-center">Previsualización</h2>
-            <div class="grid" id="prevNews"></div>
+            <div class="row maxWidthNews text-center m-auto" id="prevNews"></div>
           </div>
         </div>
       </div>       
@@ -118,7 +118,7 @@
             <img src="../images/miniEquinoccioLudicoLogo.png" width="50" alt="Logo Editorial EL">
         </div>
         <div class="col-12 col-md-8 text-center m-auto">
-            <a href="../index.html" class="text-decoration-none text-black fw-bold">INICIO</a> | <a class="text-decoration-none disabled">JUEGOS</a> | <a href="../pages/noticias.html" class="text-decoration-none text-black fw-bold">NOTICIAS</a> | <a class="text-decoration-none disabled">TIENDAS</a> | <a class="text-decoration-none disabled">CONTACTO</a>
+            <a href="../index.html" class="text-decoration-none text-black fw-bold">INICIO</a> | <a class="text-decoration-none disabled">JUEGOS</a> | <a href="../pages/noticias.html" class="text-decoration-none text-black fw-bold">NOTICIAS</a> | <a href="../pages/tienda.html" class="text-decoration-none text-black fw-bold">TIENDAS</a> | <a class="text-decoration-none disabled">CONTACTO</a>
         </div>
         <div class="col-2 d-none d-md-block text-end m-auto">
             <a href="https://www.facebook.com/"><img src="../images/facebook.png" width="25" height="25" alt="Logo Facebook" class="zoomin btn-facebook m-1"></a>

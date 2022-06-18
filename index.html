@@ -17,7 +17,7 @@
 
 </head>
 <body>
-    <header>
+    <header class="sticky-top">
       <!--Modal de bootstrap para el icono del signo de pregunta-->
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -36,7 +36,7 @@
         </div>
       </div>
       <!--termina Modal-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <div class="container-fluid">
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -85,7 +85,7 @@
           <div class="carousel-item active">
             <div class="bg-1 p-3 minHeight">
               <div class="container">
-                <span class="logoEL p-3"><img src="./images/equinoccioLudicoLogo.png" alt="Logo grande Equinoccio Ludico" width="300"></span>
+                <span class="logoEL p-3"><img src="./images/equinoccioLudicoLogo.png" alt="Logo grande Equinoccio Ludico" width="300"  class="img-fluid"></span>
                 <div>
                   <h1 class="text-center">Somos Equinoccio Ludico</h1>
                   <p class="fw-bold text__shadow text-center">Incentivados por hacer algo distinto en plena pandemia de Covid-19, un 21 de Septiembre de 2019, decidimos pasar de jugar juegos de mesa a crearlos. Y desde entonces comenzamos nuestro recorrido de aprendizaje, diversión, creación y esfuerzo para lograr crear piezas de arte que disfrutase cada jugón de tener en su ludoteca.</p>
@@ -100,9 +100,9 @@
             <div class="container minHeight pt-5">
               <h2 class="fs-2 text-center">-Conocé al equipo-</h2>
               <div class="d-flex justify-content-center justify-content-md-evenly flex-wrap">
-                  <div class="lh-lg p-3 text-center">
+                  <div class="lh-lg p-1 text-center">
                       <div>
-                          <img src="./images/disenadorJoaquin.png" alt="Foto diseñador de juegos">
+                          <img src="./images/disenadorJoaquin.png" alt="Foto diseñador de juegos" class="img-fluid">
                       </div>
                       <div class="h2 p-1 fw-bold">Joaquín Carré</div>
                       <div>Game Designer</div>
@@ -111,9 +111,9 @@
                   <div>
               
                   </div>
-                  <div class="lh-lg p-3 text-center">
+                  <div class="lh-lg p-1 text-center">
                       <div>
-                          <img src="./images/disenadoraNoemi.png" alt="Foto diseñadora gráfica">
+                          <img src="./images/disenadoraNoemi.png" alt="Foto diseñadora gráfica" class="img-fluid">
                       </div>
                       <div class="h2 p-1 fw-bold">Noemí Salxia</div>
                       <div>Diseñadora Gráfica</div>
@@ -134,9 +134,9 @@
 
 
       
-      <div class="bg-light p-2">
+      <div class="bg-light p-2 container">
         <h2 class="font-1">Noticias Destacadas</h2>
-        <div class="grid" id="ftNewsIndex"></div>
+        <div class="row text-center container m-auto justify-content-center" id="ftNewsIndex"></div>
       </div>
     </main>
     <footer class="container-fluid p-1">
@@ -145,7 +145,7 @@
             <img src="./images/miniEquinoccioLudicoLogo.png" width="50" alt="Logo Editorial EL">
         </div>
         <div class="col-12 col-md-8 text-center m-auto">
-            <a href="./index.html" class="text-decoration-none text-black fw-bold">INICIO</a> | <a class="text-decoration-none disabled">JUEGOS</a> | <a href="./pages/noticias.html" class="text-decoration-none text-black fw-bold">NOTICIAS</a> | <a class="text-decoration-none disabled">TIENDAS</a> | <a class="text-decoration-none disabled">CONTACTO</a>
+            <a href="./index.html" class="text-decoration-none text-black fw-bold">INICIO</a> | <a class="text-decoration-none disabled">JUEGOS</a> | <a href="./pages/noticias.html" class="text-decoration-none text-black fw-bold">NOTICIAS</a> | <a href="./pages/tienda.html" class="text-decoration-none text-black fw-bold">TIENDAS</a> | <a class="text-decoration-none disabled">CONTACTO</a>
         </div>
         <div class="col-2 d-none d-md-block text-end m-auto">
             <a href="https://www.facebook.com/"><img src="./images/facebook.png" width="25" height="25" alt="Logo Facebook" class="zoomin btn-facebook m-1"></a>

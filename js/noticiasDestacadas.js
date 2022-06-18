@@ -16,10 +16,10 @@ loadFtNewsJSON ? ftNewsJSON = loadFtNewsJSON : ftNewsJSON = [
 let contentMostViewsNews = "";
 
 for (const iterationIndexNews of ftNewsJSON) {
-    contentMostViewsNews += '<div><img src="./images/novedadWeb.jpg" alt="breaking news image" width="200px"><div><h6>'
-    + iterationIndexNews.fecha + "</h6></div><br /><div><h2>" + iterationIndexNews.titular + "</h2></div><br /><div><h3>" + iterationIndexNews.contenido
-    + '</h3></div><div class="dispFlex"><img src="./images/view.png" alt="views icon"><h4> ' + iterationIndexNews.views
-    + "</h4></div></div>";
+    contentMostViewsNews += '<div class="col-lg-3 col-md-4 col-sm-8 col-10 p-0"><img src="./images/novedadWeb.jpg" alt="breaking news image" class="img-fluid"><div><h6>'
+    + iterationIndexNews.fecha + '</h6></div><div><h3 class="font-weight-bold fontTitleResponsive">' + iterationIndexNews.titular + '</h3></div><div><h5 class="fontContentResponsive">' + iterationIndexNews.contenido
+    + '</h5></div><div class="d-flex align-items-center justify-content-center"><img src="./images/view.png" alt="views icon"><h6 class="viewsMargin"> ' + iterationIndexNews.views
+    + "</h6></div></div>";
     document.getElementById("ftNewsIndex").innerHTML = contentMostViewsNews;
     
 }

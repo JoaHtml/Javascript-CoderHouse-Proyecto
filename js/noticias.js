@@ -28,7 +28,7 @@ if (adminAccessAccount = true && adminAccessAccount != null) {
 let content = "";
 
 for (const packNewsWriting of packNews) {
-    content += '<div class="container"><img src="../images/novedadWeb.jpg" alt="breaking news image" width="200px"><div><h6>' + packNewsWriting.fecha + "</h6></div><br /><div><h2>" + packNewsWriting.titular + "</h2></div><br /><div><h4>" + packNewsWriting.contenido + '</h4></div><div class="dispFlex"><img src="../images/view.png" alt="views icon"><h4> ' + packNewsWriting.views + '</h4></div></div>'
+    content += '<div class="col-lg-3 col-md-4 col-sm-8 col-10 p-0"><img src="../images/novedadWeb.jpg" alt="breaking news image" class="img-fluid"><div><h6>' + packNewsWriting.fecha + '</h6></div><div><h3 class="font-weight-bold fontTitleResponsive">' + packNewsWriting.titular + '</h3></div><div><h5 class="fontContentResponsive">' + packNewsWriting.contenido + '</h5></div><div class="d-flex align-items-center justify-content-center"><img src="../images/view.png" alt="views icon"><h6 class="viewsMargin">' + packNewsWriting.views + '</h6></div></div>'
     document.getElementById ("equinoccioNews").innerHTML = content;
 }
 

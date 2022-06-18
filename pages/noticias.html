@@ -17,7 +17,7 @@
     
 </head>
 <body>
-  <header>
+  <header class="sticky-top">
     <!--Modal de bootstrap para el icono del signo de pregunta-->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -36,7 +36,7 @@
       </div>
     </div>
     <!--termina Modal-->
-      <nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
           <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -75,43 +75,43 @@
         </nav>
   </header>
     
-    <main>
-      <div class="bg-1 container-fluid">   
-        <h1 class="center font-1" style="margin: auto;">Noticias</h1>
-        <div class="text-center m-2" id="btnAccessAdminUploadNews"></div>
-        <span class="grid" id="equinoccioNews">
-        </span>
-      </div>       
+  <main>
+    <div class="bg-1 container-fluid">   
+      <h1 class="center font-1" style="margin: auto;">Noticias</h1>
+      <div class="text-center m-2" id="btnAccessAdminUploadNews"></div>
+      <span class="row text-center container m-auto justify-content-center maxWidthNews" id="equinoccioNews">
+      </span>
+      <br />
+    </div>       
   </main>
 
-    <footer class="container-fluid p-1">
-      <div class="row-fluid d-flex align-items-center">
-        <div class="col-md-2 d-none d-md-block">
-            <img src="../images/miniEquinoccioLudicoLogo.png" width="50" alt="Logo Editorial EL">
-        </div>
-        <div class="col-12 col-md-8 text-center m-auto">
-            <a href="../index.html" class="text-decoration-none text-black fw-bold">INICIO</a> | <a class="text-decoration-none disabled">JUEGOS</a> | <a href="../pages/noticias.html" class="text-decoration-none text-black fw-bold">NOTICIAS</a> | <a class="text-decoration-none disabled">TIENDAS</a> | <a class="text-decoration-none disabled">CONTACTO</a>
-        </div>
-        <div class="col-2 d-none d-md-block text-end m-auto">
-            <a href="https://www.facebook.com/"><img src="../images/facebook.png" width="25" height="25" alt="Logo Facebook" class="zoomin btn-facebook m-1"></a>
-            <a href="https://www.instagram.com/"><img src="../images/instagram.png" width="25" height="25" alt="Logo Instagram" class="zoomin btn-instagram m-2"></a>
-            <a href="https://www.youtube.com/"><img src="../images/youtube.png" width="25" height="25" alt="Logo Youtube" class="zoomin btn-youtube m-1"></a>
-        </div>
+  <footer class="container-fluid p-1">
+    <div class="row-fluid d-flex align-items-center">
+      <div class="col-md-2 d-none d-md-block">
+          <img src="../images/miniEquinoccioLudicoLogo.png" width="50" alt="Logo Editorial EL">
+      </div>
+      <div class="col-12 col-md-8 text-center m-auto">
+          <a href="../index.html" class="text-decoration-none text-black fw-bold">INICIO</a> | <a class="text-decoration-none disabled">JUEGOS</a> | <a href="../pages/noticias.html" class="text-decoration-none text-black fw-bold">NOTICIAS</a> | <a href="../pages/tienda.html" class="text-decoration-none text-black fw-bold">TIENDAS</a> | <a class="text-decoration-none disabled">CONTACTO</a>
+      </div>
+      <div class="col-2 d-none d-md-block text-end m-auto">
+          <a href="https://www.facebook.com/"><img src="../images/facebook.png" width="25" height="25" alt="Logo Facebook" class="zoomin btn-facebook m-1"></a>
+          <a href="https://www.instagram.com/"><img src="../images/instagram.png" width="25" height="25" alt="Logo Instagram" class="zoomin btn-instagram m-2"></a>
+          <a href="https://www.youtube.com/"><img src="../images/youtube.png" width="25" height="25" alt="Logo Youtube" class="zoomin btn-youtube m-1"></a>
+      </div>
     </div>
     <div class="row-fluid d-block d-md-none text-center align-items-center">
-            <a class="col m-3" href="https://www.facebook.com/"><img src="../images/facebook.png" width="25" height="25" alt="Logo Facebook" class="zoomin btn-facebook m-1"></a>
-            <a class="col m-3" href="https://www.instagram.com/"><img src="../images/instagram.png" width="25" height="25" alt="Logo Instagram" class="zoomin btn-instagram m-1"></a>
-            <a class="col m-3" href="https://www.youtube.com/"><img src="../images/youtube.png" width="25" height="25" alt="Logo Youtube" class="zoomin btn-youtube m-1"></a>
-        
+      <a class="col m-3" href="https://www.facebook.com/"><img src="../images/facebook.png" width="25" height="25" alt="Logo Facebook" class="zoomin btn-facebook m-1"></a>
+      <a class="col m-3" href="https://www.instagram.com/"><img src="../images/instagram.png" width="25" height="25" alt="Logo Instagram" class="zoomin btn-instagram m-1"></a>
+      <a class="col m-3" href="https://www.youtube.com/"><img src="../images/youtube.png" width="25" height="25" alt="Logo Youtube" class="zoomin btn-youtube m-1"></a>
     </div>
     <div>
         <p class="text-center">© 2019 - Equinoccio Lúdico</p>
     </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/luxon@2.4.0/build/global/luxon.min.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="../js/noticias.js"></script>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@2.4.0/build/global/luxon.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/noticias.js"></script>
 </body>
 </html>

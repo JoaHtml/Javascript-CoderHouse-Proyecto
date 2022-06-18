@@ -10,7 +10,7 @@
 
 .font-1 {
     font-family: 'Koulen', cursive;
-    font-size: 80px;
+    font-size: 8vw;
     text-align: center;
     margin-top: 10px;
 }
@@ -28,23 +28,63 @@
     text-align: center;
 }
 
-.grid {
-    max-width: 800px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    gap: 50px;
-    margin: auto;
+.row {
+    gap: 20px;
 }
 
 main div span div {
     background-color: aliceblue;
-    max-width: 200px;
     margin: 3px 0px;
     padding: 2px;
+}
+
+.maxWidthNews {
+    max-width: 350px;
+}
+
+.centerContainer {
+    margin: auto 0px;
+}
+
+.viewsMargin {
+    margin: 0px 0px 0px 5px;
 }
 
 footer {
     background-color: aquamarine;
     text-align: end;
+}
+
+.containerShop {
+    max-width: 800px;
+}
+
+.centerPrev {
+    justify-content: center;
+}
+
+@media (min-width: 1024px) {
+    .font-1 {
+        font-size: 82px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fontTitleResponsive {
+        font-size: 4vw;
+    }
+
+    .fontContentResponsive {
+        font-size: 3vw
+    }
+
+    .img-fluid {
+        width: 40vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .rowNoDisplay {
+        display: none;
+    }
 }

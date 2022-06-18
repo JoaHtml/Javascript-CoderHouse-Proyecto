@@ -3,7 +3,6 @@ function randomViews(min, max) {
 }
 
 let addPackNews = JSON.parse(localStorage.getItem ('packOfNews'));
-console.log (addPackNews);
 
 closeAdminAccount()
 
@@ -27,11 +26,8 @@ disableSubmitBtn ()
 let newNews;
 
 function capturar (e) {
-  console.log ("cap");
   let titleCapture = document.getElementById ("titleNews").value;
-  console.log (titleCapture);
   let contentCapture = document.getElementById ("contentNews").value;
-  console.log (contentCapture);
   
   function AddNews (fecha, titular, contenido, views) {
       this.fecha = fecha;
@@ -41,7 +37,6 @@ function capturar (e) {
   }
   
   newNews = new AddNews (luxon.DateTime.local().toLocaleString(), titleCapture.toUpperCase (), contentCapture, randomViews(1,500));
-  console.log (newNews);
   document.getElementById ('prevNews').innerHTML = "";
   agregar ();
   location.reload();
@@ -49,17 +44,14 @@ function capturar (e) {
 
 function agregar () {
   addPackNews.push (newNews);
-  console.log (addPackNews);
   localStorage.setItem ('packOfNews', JSON.stringify(addPackNews));
 }
 
 
 function previsualNews () {
   let titleCaptureNow = document.getElementById ("titleNews").value;
-  console.log ('ahora' + titleCaptureNow);
   let contentCaptureNow = document.getElementById ("contentNews").value;
-  console.log ('ahoraaa' + contentCaptureNow);
-  document.getElementById ('prevNews').innerHTML = '<div class="container"><img src="../images/novedadWeb.jpg" alt="breaking news image" width="200px"><div><h6>' + luxon.DateTime.local().toLocaleString() + "</h6></div><br /><div><h2>" + titleCaptureNow.toUpperCase() + "</h2></div><br /><div><h4>" + contentCaptureNow + '</h4></div><div class="dispFlex"><img src="../images/view.png" alt="views icon"><h4> ' + randomViews(1,500) + '</h4></div></div>';
+  document.getElementById ('prevNews').innerHTML = '<div class="col"><img src="../images/novedadWeb.jpg" alt="breaking news image" width="200px"><div><h6>' + luxon.DateTime.local().toLocaleString() + "</h6></div><div><h3>" + titleCaptureNow.toUpperCase() + '</h3></div><div class="maxWidthNews"><h5>' + contentCaptureNow + '</h5></div><div class="d-flex align-items-center justify-content-center"><img src="../images/view.png" alt="views icon"><h6 class="viewsMargin"> ' + randomViews(1,500) + '</h6></div></div>';
 
   if (document.getElementById ("titleNews").value != "" && document.getElementById ("contentNews").value != "" ){
     document.getElementById ('btnSubmit').removeAttribute ('disabled');
