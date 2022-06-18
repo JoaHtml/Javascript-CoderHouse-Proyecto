@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apartado de acceso único por el admin para subir nuevas noticias">
+    
     <title>Acceso Admin Noticias - Equinoccio Ludico</title>
     
     <link rel="icon" type="image/png" href="../images/miniEquinoccioLudicoLogo.png" sizes="16x16">
@@ -78,6 +80,7 @@
     <main class="mh-100 bg-1">
       <div class="container-fluid" id="onlyAdminView">   
         <h1 class="center font-1" style="margin: auto;">Subir Noticias</h1>
+        <!--apartado para subir titulo y contenido de la noticia-->
         <div class="row vh-100">
           <div class="col">
             <div class="container py-2">
@@ -86,24 +89,13 @@
                 <input id="titleNews" type="text" placeholder="Ingresa titulo" class="form-control my-2">
                 <label for="contentNews" class="form-label">Contenido</label>
                 <textarea id="contentNews" type="text" placeholder="Ingresa contenido" class="form-control my-2"></textarea>
-                <!-- <input class="form-check-input" type="radio" name="dateRadio" id="dateRadioActual" value="option1" checked>
-                <label class="form-check-label" for="dateRadioActual">Fecha Actual</label>
-                <br />
-                <input class="form-check-input" type="radio" name="dateRadio" id="dateRadioOther" value="option2">
-                <label class="form-check-label" for="dateRadioOther">Otra Fecha</label>
-                <div class="input-group mb-3">
-                  <input type="number" class="form-control" aria-label="day" placeholder="DD" id="dayInput" min="1" max="31">
-                  <span class="input-group-text">/</span>
-                  <input type="number" class="form-control" aria-label="month" placeholder="MM" id="monthInput" min="1" max="12">
-                  <span class="input-group-text">/</span>
-                  <input type="number" class="form-control" aria-label="year" placeholder="AAAA" id="yearInput" min="0" max="9999">
-                </div> -->
                 <br />
                 <button id="previsual" class="btn btn-danger" type="button" onclick="previsualNews()">Previsualizar >>></button>
                 <button id="btnSubmit" class="btn btn-success" type="reset" onclick="capturar();">Subir</button>
               </form>
             </div>
           </div>
+          <!--apartado de previsualización de la noticia creada antes de subirla-->
           <div class="col vh-100 container-fluid">
             <h2 class="text-center">Previsualización</h2>
             <div class="row maxWidthNews text-center m-auto" id="prevNews"></div>
